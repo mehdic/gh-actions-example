@@ -27,8 +27,8 @@ jobs:
           name: java-app
           path: ./java-app/target/*.jar
 
-      - name: Deploy with maven
+      - name: Publish to GitHub Packages
+        run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: cd java-app && mvn deploy -Dtoken=$GITHUB_TOKEN
 
