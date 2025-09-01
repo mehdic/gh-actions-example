@@ -28,5 +28,5 @@ jobs:
           path: ./java-app/target/*.jar
 
       - name: Deploy with maven
-        run: mvn deploy
+        run: cd java-app && mvn deploy
 
