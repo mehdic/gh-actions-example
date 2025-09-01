@@ -1,0 +1,16 @@
+name: Use my Action
+on:
+  workflow_dispatch:
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test Composite Action
+        uses: ./.github/actions/build-test-report
+        with:
+          working-directory: './java-app'
+          skip-test: false
+
+
