@@ -1,4 +1,4 @@
-name: Build and Test Java Application
+name: Build and Test Java Application on Push
 on:
   push:
     branches:
@@ -22,7 +22,7 @@ jobs:
         run: mvn clean install
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: java-app
           path: /java-app/target/*.jar
