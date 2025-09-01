@@ -28,5 +28,7 @@ jobs:
           path: ./java-app/target/*.jar
 
       - name: Deploy with maven
-        run: cd java-app && mvn deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cd java-app && mvn deploy -Dtoken=$GITHUB_TOKEN
 
