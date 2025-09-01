@@ -1,5 +1,5 @@
 name: Greetings workflow
-on: [push]
+on: [issues]
 jobs:
     build:
         runs-on: ubuntu-latest
